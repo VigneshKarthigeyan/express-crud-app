@@ -5,6 +5,7 @@ const debug = require("debug")("app:start");
 const logger = require("./middleware/check");
 const home = require("./routes/home");
 const courses = require("./routes/courses");
+const students =require('./routes/students');
 
 const app = express();
 mongoose.connect("mongodb://localhost/CourseDB")
@@ -21,6 +22,7 @@ if(app.get('env')==='development'){
 
 app.use("/", home);
 app.use("/api/courses", courses);
+app.use("/api/students", students);
 
 const port = process.env.PORT || 3000;
 debug("App has finely started...");
