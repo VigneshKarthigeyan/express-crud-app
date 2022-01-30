@@ -17,6 +17,7 @@ const courseSchema = new mongoose.Schema({
     },
   },
   date: { type: Date, default: Date.now },
+  noOfEnrollments: { type: Number, default: 0 },
   isPublished: { type: Boolean, required: true },
   price: {
     type: Number,
