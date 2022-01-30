@@ -25,8 +25,8 @@ const Enrollment = mongoose.model("Enrollment", enrollmentSchema);
 
 function validateEnrollment(enrollment) {
   const schema = Joi.object({
-    studentId: Joi.string().required(),
-    courseId: Joi.string().required(),
+    studentId: Joi.objectID().required(),
+    courseId: Joi.objectID().required(),
   });
   return schema.validate(enrollment);
 }
